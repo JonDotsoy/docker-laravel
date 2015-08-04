@@ -33,8 +33,6 @@ docker run --rm -it -p 8900:80 alfa30/laravel:5.1 bash
 docker run --rm -it -p 8900:80 alfa30/laravel:5.1
 ```
 
-php artisan serve --host="0.0.0.0" --port="80"
-
 
 Build Laravel 5
 ---------------
