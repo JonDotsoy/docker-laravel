@@ -31,12 +31,8 @@ WORKDIR /var/www/html/public
 
 RUN chmod -R 777 /var/www/html/app/storage
 
-# Change public folder
-# /etc/apache2/sites-available/000-default.conf
-RUN sed -i -e 's/DocumentRoot\ \/var\/www\/html/DocumentRoot\ \/var\/www\/html\/public/g' /etc/apache2/apache2.conf
-# RUN sed -i -e 's/DocumentRoot\ \/var\/www\/html/DocumentRoot\ \/var\/www\/html\/public/g' /etc/apache2/sites-available/000-default.conf
-# cat /etc/apache2/sites-available/000-default.conf /var/www/html/public
-# /var/www/html/public
-# apache2.conf
+# Enable htaccess
+RUN a2enmod rewrite
+ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80

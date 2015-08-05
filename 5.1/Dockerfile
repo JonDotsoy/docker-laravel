@@ -17,24 +17,22 @@ RUN echo "Install Git" && apt-get install git -y
 # Zip dependences
 RUN echo "Zip Archive" && apt-get install -y zlib1g-dev && docker-php-ext-install zip
 RUN echo "mbstring bcmath" && docker-php-ext-install bcmath mbstring
+RUN echo "Libmcrypt-dev" && apt-get install -y libmcrypt-dev
+RUN echo "mcrypt" && docker-php-ext-install mcrypt
 
 # Add Bin Composer in PATH
 ENV PATH ${PATH}:~/.composer/vendor/bin
 
 # RUN laravel DemoProject
 # ~/.composer/vendor/bin/laravel new html -n
-RUN echo "New Demo project" && cd /var/www && rm -r /var/www/html && composer create-project laravel/laravel /var/www/html 5.1 --prefer-dist --quiet
+RUN echo "New Demo project" && cd /var/www && rm -r /var/www/html && composer create-project laravel/laravel /var/www/html "5.1" --prefer-dist
 
 WORKDIR /var/www/html/public
 
 RUN chmod -R 777 /var/www/html/storage
 
-# Change public folder
-# /etc/apache2/sites-available/000-default.conf
-RUN sed -i -e 's/DocumentRoot\ \/var\/www\/html/DocumentRoot\ \/var\/www\/html\/public/g' /etc/apache2/apache2.conf
-# RUN sed -i -e 's/DocumentRoot\ \/var\/www\/html/DocumentRoot\ \/var\/www\/html\/public/g' /etc/apache2/sites-available/000-default.conf
-# cat /etc/apache2/sites-available/000-default.conf /var/www/html/public
-# /var/www/html/public
-# apache2.conf
+# Enable htaccess
+RUN a2enmod rewrite
+ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80
