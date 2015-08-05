@@ -34,5 +34,7 @@ RUN chmod -R 777 /var/www/html/storage
 # Enable htaccess
 RUN a2enmod rewrite
 ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
+ADD apache2.conf /etc/apache2/apache2.conf
+
 
 EXPOSE 80
