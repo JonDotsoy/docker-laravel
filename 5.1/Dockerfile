@@ -25,7 +25,7 @@ ENV PATH ${PATH}:~/.composer/vendor/bin
 
 # RUN laravel DemoProject
 # ~/.composer/vendor/bin/laravel new html -n
-RUN echo "New Demo project" && cd /var/www && rm -r /var/www/html && composer create-project laravel/laravel /var/www/html "5.1" --prefer-dist
+RUN echo "New Demo project" && cd /var/www && rm -r /var/www/html && composer create-project laravel/laravel /var/www/html "5.1.4" --prefer-dist
 
 WORKDIR /var/www/html/public
 
