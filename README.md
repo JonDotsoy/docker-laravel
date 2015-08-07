@@ -3,9 +3,9 @@ Laravel to Docker
 
 # Laravel Tags
 
-- [`4.2` (4.2/Dockerfile)](4.2/Dockerfile)
-- [`5` (5.0/Dockerfile)](5.0/Dockerfile)
-- [`5.1` (5.1/Dockerfile)](5.1/Dockerfile)
+- [`4.2` \[`4.2.11`\] (4.2/Dockerfile)](4.2/Dockerfile)
+- [`5.0` \[`5.0.16`\] (5.0/Dockerfile)](5.0/Dockerfile)
+- [`5.1` \[`5.1.4`\] (5.1/Dockerfile)](5.1/Dockerfile)
 
 > **NOTE**: These containers using `php 5.6-apache`.
 
