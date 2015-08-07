@@ -1,7 +1,8 @@
 Laravel to Docker
 =================
 
-# Laravel Tags
+Laravel Tags
+------------
 
 - [`4.2` \[`4.2.11`\] (4.2/Dockerfile)](4.2/Dockerfile)
 - [`5.0` \[`5.0.16`\] (5.0/Dockerfile)](5.0/Dockerfile)
@@ -9,7 +10,8 @@ Laravel to Docker
 
 > **NOTE**: These containers using `php 5.6-apache`.
 
-# What is Laravel?
+What is Laravel?
+----------------
 
 
 Laravel is a free, open-source PHP web application framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller (MVC) architectural pattern. Prominent Laravel features include its expressive syntax, a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, and various utilities that aid in application deployment and maintenance.
@@ -18,6 +20,19 @@ Laravel is a free, open-source PHP web application framework, created by Taylor 
 
 ![Laravel Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/LaravelLogo.png/250px-LaravelLogo.png)
 
+
+Docker Pull Command
+-------------------
+
+```bash
+docker pull alfa30/laravel
+```
+
+### Especific Version
+
+ - 5.1 `docker pull alfa30/laravel:5.1`
+ - 5.0 `docker pull alfa30/laravel:5.0`
+ - 4.2 `docker pull alfa30/laravel:4.2`
 
 Build Laravel 5.1
 -----------------
